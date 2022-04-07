@@ -5,5 +5,7 @@ Contains the Teensy Axial Display
 Contains motor driver mini bloq files (Arduino)
 Web application to generate image
 uses APA102 5050  led stripts
+Image MAtrix display - uses similar web application to the Axial to generate image
+Text Matrix display 
 
 this is design to be small and light weight 

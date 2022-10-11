@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mbqc xmlns="http://mbqc.namespaces.minibloq.org" xmlns:minibloq="http://minibloq.org" MinibloqVersion="0.82.Beta">
+    <files/>
+    <properties>
+        <canvas visible="true"/>
+        <blocks count="19"/>
+    </properties>
+    <variables>
+        <seconds/>
+    </variables>
+    <blocks>
+        <ComponentStart function="Flow" commented="false" instanceName="initBoard" paramsCount="0" hasAddParamsButton="false" loadAction="noLoad"/>
+        <VariableInit function="Setter" commented="false" constantValue="seconds" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="40" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableInit>
+        <Comment function="Code" commented="false" constantValue="Time Starting sequence" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <ServoRC function="Setter" commented="false" instanceName="servo0" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="50" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </ServoRC>
+        <delay function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="5000" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </delay>
+        <ServoRC function="Setter" commented="false" instanceName="servo0" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="76" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </ServoRC>
+        <delay function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="3000" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </delay>
+        <Comment function="Code" commented="false" constantValue="Run Duration" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <repeat function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberMul function="Operation" commented="false" paramsCount="2" hasAddParamsButton="true" loadAction="load">
+                <VariableGetter function="Getter" commented="false" instanceName="seconds" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <numberConstant function="Constant" commented="false" constantValue="15" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </numberMul>
+        </repeat>
+        <Comment function="Code" commented="false" constantValue="Taco-Meter" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <if function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberGreaterThan function="Operation" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+                <PulseIn function="Getter" commented="false" instanceName="D3" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+                    <boolConstantTrue function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                    <numberConstant function="Constant" commented="false" constantValue="70000" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                </PulseIn>
+                <numberConstant function="Constant" commented="false" constantValue="69200" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </numberGreaterThan>
+        </if>
+        <IOPin function="Setter" commented="false" instanceName="D13_LED" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantTrue function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </IOPin>
+        <ServoRC function="Setter" commented="false" instanceName="servo0" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberAdd function="Operation" commented="false" paramsCount="2" hasAddParamsButton="true" loadAction="load">
+                <ServoRCGetter function="Getter" commented="false" instanceName="servo0" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <numberConstant function="Constant" commented="false" constantValue="1" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </numberAdd>
+        </ServoRC>
+        <else function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+        <IOPin function="Setter" commented="false" instanceName="D13_LED" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantFalse function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </IOPin>
+        <ServoRC function="Setter" commented="false" instanceName="servo0" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="70" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </ServoRC>
+        <endIf function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+        <repeatEnd function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+        <ServoRC function="Setter" commented="false" instanceName="servo0" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="50" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </ServoRC>
+    </blocks>
+</mbqc>
